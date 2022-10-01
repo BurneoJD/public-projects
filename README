@@ -1,0 +1,5 @@
+Project based on DataCamp's "Intermediate Python" course's "Case Study: Hacker Statistics" exercise.
+
+Simulates random walks where the subject moves (or doesn't) based on the results of tossing a dice before each move.
+The simulations are repeated multiple times to allow for the generation of a distribution.
+The distribution is used to calculate the probability of reaching a certain amount of steps during a random walk.
