@@ -74,7 +74,7 @@ for walk in range(100):
         elif dice <= 5:
             step += 1 #Rolling a 3, 4, or 5 adds 1 Step
         else:
-            step += dice #Rolling a 6 rolls another dice 
+            step += np.random.randint(1, 7) #Rolling a 6 rolls another dice 
                          #The dice's value is added to steps
         
         #Implement Clumsiness
