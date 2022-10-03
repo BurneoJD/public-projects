@@ -4,45 +4,6 @@ Created on Fri Sep 30 12:59:58 2022
 
 @author: jdbur
 """
-
-#Simulate Dice
-"""
-dice = np.random.randint(1, 7) #Generates Random Number Between 1 and 6
-"""
-
-#Random Walk Loop
-"""
-#Initialize Random Walk
-random_walk = [0]
-
-#Random_Walk
-for step in range(100):
-    step = random_walk[-1]
-    #Simulate Dice
-    dice = np.random.randint(1, 7) #Generates Random Number Between 1 and 6
-    clumsiness = np.random.rand()
-    
-    if dice <= 2:
-        step = max(0, step - 1)
-    elif dice <= 5:
-        step += 1
-    else:
-        step += dice
-    
-    #Implement Clumsiness
-    if clumsiness <= 0.001:
-        step = 0
-    
-    #Append Steps to Random Walk
-    random_walk.append(step)
-    
-print(random_walk)
-
-#Plot Random Walk
-plt.plot(random_walk)
-plt.show()
-"""
-
 #Random Walk Simulation
 
 #Load Packages
@@ -51,6 +12,12 @@ import matplotlib.pyplot as plt
 
 #Set Seed
 np.random.seed(123)
+
+#Define Dice function
+def dice():
+    """Generates Random Number Between 1 and 6 """
+    dice_roll = np.random.randint(1, 7)
+    return dice_roll
 
 #Initialize Random Walk Distribution
 random_walk_dist = []
@@ -65,16 +32,17 @@ for walk in range(100):
         step = random_walk[-1] #Sets the last value of random_walk as
                                #the current Step
         #Simulate Dice
-        dice = np.random.randint(1, 7) #Generates Random Number Between 1 and 6
+        dice1 = dice()
+        dice2 = dice()
         clumsiness = np.random.rand() #Simulates Mistakes
         
-        if dice <= 2:
+        if dice1 <= 2:
             step = max(0, step - 1) #Sets Lowest Possible Value to 0
                                     #Rolling a 1 or 2 takes 1 Step away
-        elif dice <= 5:
+        elif dice1 <= 5:
             step += 1 #Rolling a 3, 4, or 5 adds 1 Step
         else:
-            step += np.random.randint(1, 7) #Rolling a 6 rolls another dice 
+            step += dice2 #Rolling a 6 rolls another dice 
                          #The dice's value is added to steps
         
         #Implement Clumsiness
