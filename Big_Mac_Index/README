@@ -1,0 +1,6 @@
+Final project for Brainstation's Data Science certification.
+
+Jupyter notebook showing the process the for calculating and visualizing The Economist's "Raw Big Mac Index" and "Adjusted Big Mac Index".
+Data was sourced from The Economist's repository, and the formulas were derived from The Economist's original code, which was written in R.
+
+The code needs some cleaning to improve performance and readability, and further analysis and improvements should be done in the future.
